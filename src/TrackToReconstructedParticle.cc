@@ -16,35 +16,35 @@ TrackToReconstructedParticle::TrackToReconstructedParticle() : Processor("TrackT
 	                             _printing,
 	                             (int)5 ) ;
 
-	std::vector<double> masses;
+	std::vector<double> masses{};
 	masses.push_back(0);
 	registerProcessorParameter("Masses",
 				   "Mass of the PDG code assigned",
 				    _masses,
 				    masses);
 
-	std::vector<int> charges;
+	std::vector<int> charges{};
 	charges.push_back(0);
 	registerProcessorParameter("Charges",
 				   "Charge of the PDG code assigned",
 				    _charges,
 				    charges);
 
-	std::vector<int> pdgs;
+	std::vector<int> pdgs{};
 	pdgs.push_back(0);
 	registerProcessorParameter("Pdgs",
 				   "PDG codes to be assigned to tracks",
 				    _pdgs,
 				    pdgs);
 
-   	std::string inputTrackCollectionName = "MarlinTrkTracks";
+   	std::string inputTrackCollectionName = "x";
   	registerInputCollection( LCIO::TRACK,
                                  "InputTrackCollectionName" ,
                                  "Input Track Collection Name " ,
                                  _inputTrackCollectionName,
                                  inputTrackCollectionName);  
 
-  	std::string outputParticleCollectionName = "NewPfoCol";
+  	std::string outputParticleCollectionName = "x";
   	registerOutputCollection( LCIO::RECONSTRUCTEDPARTICLE,
                              	"OutputParticleCollectionName" ,
 			     	"Output Particle Collection Name "  ,
