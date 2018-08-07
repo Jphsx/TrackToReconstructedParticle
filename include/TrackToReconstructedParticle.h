@@ -6,6 +6,7 @@
 #include "IMPL/LCCollectionVec.h"
 #include "IMPL/ParticleIDImpl.h"
 #include "IMPL/ReconstructedParticleImpl.h"
+#include <marlin/Global.h>
 #include "gear/BField.h"
 
 using namespace lcio;

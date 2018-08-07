@@ -17,21 +17,21 @@ TrackToReconstructedParticle::TrackToReconstructedParticle() : Processor("TrackT
 	                             (int)5 ) ;
 
 	std::vector<double> masses;
-	preorderPdgs.push_back(0);
+	masses.push_back(0);
 	registerProcessorParameter("Masses",
 				   "Mass of the PDG code assigned",
 				    _masses,
 				    masses);
 
 	std::vector<int> charges;
-	preorderPdgs.push_back(0);
+	charges.push_back(0);
 	registerProcessorParameter("Charges",
 				   "Charge of the PDG code assigned",
 				    _charges,
 				    charges);
 
 	std::vector<int> pdgs;
-	preorderPdgs.push_back(0);
+	pdgs.push_back(0);
 	registerProcessorParameter("Pdgs",
 				   "PDG codes to be assigned to tracks",
 				    _pdgs,
@@ -111,7 +111,6 @@ bool TrackToReconstructedParticle::FindTracks( LCEvent* evt ) {
   if(_printing>1)std::cout << "FindTracks : " << tf << std::endl;
 
   return tf;
-}
 }
 std::vector<double> TrackToReconstructedParticle::getTrackPxPyPz(Track* t){
 	const double c = 2.99792458e8; // m*s^-1        
@@ -209,11 +208,6 @@ void TrackToReconstructedParticle::processEvent( LCEvent * evt ) {
  std::cout << "======================================== event " << nEvt << std::endl ;
 
 }
-
-
-
-
-
 void TrackToReconstructedParticle::end(){
 
 }
