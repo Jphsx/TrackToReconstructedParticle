@@ -50,7 +50,7 @@ using namespace lcio;
   bool FindTracks(LCEvent* evt);
  
   std::vector<double> getTrackPxPyPz(Track* t);
-  ReconstructedParticle* makePartFromTrack(Track* t, double mass, int charge, int pdg);
+  ReconstructedParticle* makePartFromTrack(Track* t, float mass, int charge, int pdg);
   
   //printing utility
   void printTrack(Track* t);
@@ -67,7 +67,7 @@ using namespace lcio;
    double BField{};
 
   // particle info to be assigned to tracks
-   std::vector<double> _masses{};
+   std::vector<float> _masses{};
    std::vector<int> _charges{};
    std::vector<int> _pdgs{};
  

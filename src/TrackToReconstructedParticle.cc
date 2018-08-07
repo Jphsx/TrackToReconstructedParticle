@@ -13,7 +13,7 @@ TrackToReconstructedParticle::TrackToReconstructedParticle() : Processor("TrackT
 	                             _printing,
 	                             (int)5 ) ;
 
-	std::vector<double> masses{};
+	std::vector<float> masses{};
 	masses.push_back(0);
 	registerProcessorParameter("Masses",
 				   "Mass of the PDG code assigned",
@@ -131,7 +131,7 @@ std::vector<double> TrackToReconstructedParticle::getTrackPxPyPz(Track* t){
 	return txtytz;
 }
 
-ReconstructedParticle* TrackToReconstructedParticle::makePartFromTrack(Track* t, double mass, int charge, int pdg){
+ReconstructedParticle* TrackToReconstructedParticle::makePartFromTrack(Track* t, float mass, int charge, int pdg){
 
 		ReconstructedParticleImpl* p = new ReconstructedParticleImpl();
 		ParticleIDImpl* newPDG = new ParticleIDImpl();
