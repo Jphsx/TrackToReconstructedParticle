@@ -5,9 +5,6 @@ TrackToReconstructedParticle aTrackToReconstructedParticle;
 
 TrackToReconstructedParticle::TrackToReconstructedParticle() : Processor("TrackToReconstructedParticle") {
 
-  // modify processor description
-	_description = "makes reco parts from tracks given some mass/pdg info" ;
-
 
   // register steering parameters: name, description, class-variable, default value
 
