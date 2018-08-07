@@ -187,7 +187,7 @@ void TrackToReconstructedParticle::processEvent( LCEvent * evt ) {
 		for( unsigned int j=0; j< _masses.size(); i++){
 			//if the charges match continue
 			if( _trackvec.at(i)->getOmega() * _charges.at(j) > 0){
-				part = makePartFromTrack(_trackvec.at(i), masses.at(j) , charges.at(j), pdgs.at(j) );					
+				part = makePartFromTrack(_trackvec.at(i), _masses.at(j) , _charges.at(j), _pdgs.at(j) );					
 				partCollection->addElement( part );
 				std::cout<<"Particle Created:"<<std::endl;
 				printTrack(_trackvec.at(i));

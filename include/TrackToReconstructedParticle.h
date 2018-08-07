@@ -8,6 +8,7 @@
 #include "IMPL/ReconstructedParticleImpl.h"
 #include <marlin/Global.h>
 #include "gear/BField.h"
+#include "TLorentzVector.h"
 
 using namespace lcio;
 
