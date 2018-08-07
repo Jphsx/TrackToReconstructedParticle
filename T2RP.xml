@@ -25,9 +25,9 @@
 	
 	<processor name="MyTrackToReconstructedParticle" type="TrackToReconstructedParticle">   
 		<!-- tree parameters -->
-		<parameter name="Pdgs" type="IntVec"> 443 13 -13 </parameter>
-		<parameter name="Charges" type="IntVec" value = "0,1,),2,),)" />
-		<parameter name="Masses" type="FloatVec"> 3.096916 -1 -1  </parameter>
+		<parameter name="Pdgs" type="IntVec"> 13 -13 </parameter>
+		<parameter name="Charges" type="IntVec"> 1 -1 </parameter>
+		<parameter name="Masses" type="FloatVec"> .1056583715 .1056583715  </parameter>
 
 		<!-- input/output collection names -->
 		<parameter name="InputTrackCollectionName" value="MarlinTrkTracks" />
@@ -35,8 +35,6 @@
 		<parameter name="OutputParticleCollectionName" type="string" lcioOutType="ReconstructedParticle">NewPfoCol</parameter>
    
  	</processor>
-
-	
 
 
 </marlin>
