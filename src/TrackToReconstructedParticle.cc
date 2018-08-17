@@ -116,7 +116,7 @@ std::vector<double> TrackToReconstructedParticle::getTrackPxPyPz(Track* t){
   	const double eB = BField*c*mm2m*eV2GeV;
  
  	
-	double cosLambda = 1 / sqrt(1 + t->getTanLambda()*t->getTanLambda() );
+	/*double cosLambda = 1 / sqrt(1 + t->getTanLambda()*t->getTanLambda() );
 	double P = (eB/fabs(t->getOmega()))/cosLambda;
 	double sinLambda = t->getTanLambda()*cosLambda;
 	double cosPhi = cos(t->getPhi());
@@ -124,6 +124,17 @@ std::vector<double> TrackToReconstructedParticle::getTrackPxPyPz(Track* t){
 	double px = P*cosLambda*cosPhi;
 	double py = P*cosLambda*sinPhi;
 	double pz = P*sinLambda;
+	*/
+	double omega = p->track->getOmega();
+	double q = p->part->getCharge();
+	
+	double cosPhi = cos(p->track->getPhi());
+	double sinPhi = sin(p->track->getPhi());	
+
+	double px = q*eB/omega  * cosPhi;
+	double py = q*eB/omega  * sinPhi;
+	double pz = q*eB/omega * p->track->getTanLambda();
+
 	std::vector<double> txtytz;
 	txtytz.push_back(px);
 	txtytz.push_back(py);
