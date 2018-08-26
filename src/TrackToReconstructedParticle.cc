@@ -182,7 +182,7 @@ void TrackToReconstructedParticle::processEvent( LCEvent * evt ) {
  FindTracks(evt);
   
  // LCCollectionVec * partCollection = new LCCollectionVec(LCIO::RECONSTRUCTEDPARTICLE);
- LCCollectionVec * partCollection = evt->getCollection("NewPfoCol");
+ EVENT::LCCollection* partCollection = evt->getCollection("NewPfoCol");
 
   streamlog_out(MESSAGE) << " start processing event " << std::endl;
  
